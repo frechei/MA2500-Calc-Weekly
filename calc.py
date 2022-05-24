@@ -30,7 +30,7 @@ def main():
         d11=t11.strftime('%Y-%m-%d')
         #TIME
         result = pd.DataFrame()
-        k = bs.query_history_k_data_plus("sh.600837","date,code,close",start_date=d11, end_date=d,frequency="d", adjustflag="3")
+        k = bs.query_history_k_data_plus("sh.510500","date,code,close",start_date=d11, end_date=d,frequency="d", adjustflag="3")
         result=pd.concat([result,k.get_data()],axis=0,ignore_index=True)
         result.date=pd.to_datetime(result.date)
         result=result.sort_values(by='date',ascending=False)
