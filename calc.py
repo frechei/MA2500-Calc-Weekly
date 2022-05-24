@@ -30,7 +30,7 @@ def main():
         d11=t11.strftime('%Y-%m-%d')
         #TIME
         result = pd.DataFrame()
-        k = bs.query_history_k_data_plus("sh.601688","date,code,close",start_date=d11, end_date=d,frequency="d", adjustflag="3")
+        k = bs.query_history_k_data_plus("sh.000001","date,code,close",start_date=d11, end_date=d,frequency="d", adjustflag="3")
         result=pd.concat([result,k.get_data()],axis=0,ignore_index=True)
         result.date=pd.to_datetime(result.date)
         result=result.sort_values(by='date',ascending=False)
@@ -58,7 +58,7 @@ def main():
                 judge="MA2500"
             else:
                 judge="*1.2"
-            tilt="今日haitong高于"+judge+"线"
+            tilt="今日000001高于"+judge+"线"
         print(tilt)
         #GENERATE TITLE
         # 斜杠用来代码换行
